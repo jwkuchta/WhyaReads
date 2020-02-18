@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
+    @review = Review.find_by(id: params[:id])
     if @review.destroy
       flash[:success] = 'Review was successfully deleted.'
       redirect_to user_path(current_user)

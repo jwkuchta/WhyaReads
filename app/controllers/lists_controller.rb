@@ -32,7 +32,7 @@ class ListsController < ApplicationController
   end
 
   def find_book
-    @book = Book.find(cookies[:book_id])
+    @book = Book.find_by(id: cookies[:book_id])
   end
 
 end
